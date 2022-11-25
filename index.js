@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
       user: "Admin",
       message: `${users[socket.id]} has left`,
     });
-    console.log(`${user} left`);
+    console.log("User Left");
   });
 });
 
