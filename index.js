@@ -10,7 +10,7 @@ const users = [{}];
 
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("HELLO IT'S WORKING");
+  res.send("Hello IT'S Working");
 });
 
 const server = http.createServer(app);
@@ -18,9 +18,7 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 io.on("connection", (socket) => {
-  console.log(
-    "connected"
-  );
+  console.log( "connected");
 
   socket.on("joined", ({ user }) => {
     users[socket.id] = user;
@@ -31,7 +29,7 @@ io.on("connection", (socket) => {
     });
     socket.emit("welcome", {
       user: "Admin",
-      message: `Welcome to the chat,${users[socket.id]} `,
+      message: `Welcome to the chat${users[socket.id]} `,
     });
   });
 
