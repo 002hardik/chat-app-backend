@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
     });
     socket.emit("welcome", {
       user: "Admin",
-      message: `Welcome to the chat${users[socket.id]} `,
+      message: `Welcome to the chat :${users[socket.id]} `,
     });
   });
 
